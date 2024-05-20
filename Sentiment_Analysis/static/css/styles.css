@@ -1,0 +1,17 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+}
+.navbar, .bottombar {
+    background-color: #ffffff;
+}
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.message {
+    max-width: 100%;
+}
+main {
+    max-height: calc(100vh - 9rem); /* Adjust based on navbar and bottombar height */
+    overflow-y: auto;
+}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- <main class="flex-grow mt-16 mb-16 p-4 flex justify-center">
+      <div class="w-full max-w-screen-md"> -->
+          <!-- User 1 Message -->
+          <!-- <div class="flex items-start justify-end mb-4">
+              <div class="message bg-blue-100 p-4 rounded-lg">
+                  <p>User 1 message goes here...
+                  </p>
+              </div>
+              <img src="{{ url_for('static', filename='images/account.png') }}" alt="User 1 Picture" class="w-8 h-8 rounded-full ml-2 mt-2">
+          </div> -->
+          <!-- User 2 Message -->
+          <!-- <div class="flex items-start mb-4">
+              <img src="{{ url_for('static', filename='images/robot.png') }}" alt="User 2 Picture" class="w-8 h-8 rounded-full mr-2 mt-2">
+              <div class="message bg-green-100 p-4 rounded-lg text-left">
+                  <p>User 2 message goes here...</p>
+              </div>
+          </div>
+      </div>
+  </main> -->
+
+  <main id="#main" class="flex-grow mt-16 mb-16 p-4 flex justify-center">
+    <div class="w-full max-w-screen-md">
+        <!-- User Messages -->
+        {% for message in user_messages %}
+                <!-- User Message -->
+                <div class="flex items-start justify-end mb-4">
+                    <div class="message bg-blue-100 p-4 rounded-lg">
+                        <p>{{ message.SenderContent }}</p>
+                    </div>
+                    <img src="{{ picture }}" alt="User Picture" class="w-8 h-8 rounded-full ml-2 mt-2">
+                </div>
+                <!-- Bot Message -->
+                <div class="flex items-start mb-4">
+                    <img src="{{ url_for('static', filename='images/robot.png') }}" alt="Bot Picture" class="w-8 h-8 rounded-full mr-2 mt-2">
+                    <div class="message bg-green-100 p-4 rounded-lg text-left">
+                        <p>{{ message.ReceiverContent }}</p>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</main>
+<div id="bottom"></div>
+
+
+  
+  {% endblock %}
